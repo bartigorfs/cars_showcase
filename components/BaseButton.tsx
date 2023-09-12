@@ -1,5 +1,4 @@
 "use client"
-import Image from 'next/image'
 import {BaseButtonProps} from "@/types";
 
 const BaseButton = ({title, containerStyles, handleClick, btnType}: BaseButtonProps) => {
