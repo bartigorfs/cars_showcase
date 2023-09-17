@@ -13,6 +13,11 @@ const CarCard = ({car}: CarCardProps) => {
     const [open, setIsOpen] = useState(false);
     const {city_mpg, year, make, model, transmission, drive} = car;
 
+    const handleModalOpen = (value: boolean) => {
+        console.log(value);
+        setIsOpen(value);
+    }
+
     const carRentPrice = calculateCarRent(city_mpg, year);
     return (
         <div className="car-card group">
@@ -56,12 +61,12 @@ const CarCard = ({car}: CarCardProps) => {
                     <BaseButton title={"View more"}
                                 textStyles="text-white text-[14px] leading-[17px] font-bold"
                                 rightIcon="/right-arrow.svg"
-                                handleClick={() => setIsOpen(true)}
+                                handleClick={() => handleModalOpen(true)}
                                 containerStyles="w-full py-[16px] rounded-full bg-primary-blue" />
                 </div>
             </div>
 
-            <CarDetails isOpen={open} closeModal={() => setIsOpen(false)} car={car} />
+            <CarDetails isOpen={open} closeModal={() => handleModalOpen(false)} car={car} />
         </div>
     )
 }

@@ -1,14 +1,15 @@
-import {EventHandler} from "react";
+import {EventHandler, MouseEventHandler} from "react";
 
 export interface HomeProps {
     searchParams: FilterProps;
 }
 
 export interface BaseButtonProps{
+    isDisabled?: boolean
     title: string;
     containerStyles?: string;
     textStyles?: string;
-    handleClick?: EventHandler<HTMLButtonElement>;
+    handleClick?: MouseEventHandler<HTMLButtonElement>;
     btnType?: "button" | "submit";
     rightIcon?: string;
 }
