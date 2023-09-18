@@ -18,8 +18,8 @@ export default function RootLayout({
       <body className="relative">
       <Navbar/>
       {children}
-      </body>
       <Footer/>
+      </body>
     </html>
   )
 }

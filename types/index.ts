@@ -47,3 +47,18 @@ export interface FilterProps{
     limit: number,
     model: string,
 }
+
+export interface CustomFilterProps{
+    title: string,
+    options: OptionProp[],
+}
+
+export interface OptionProp{
+    title: string,
+    value: string
+}
+
+export interface ShowMoreProps {
+    pageNumber: number;
+    isNext: boolean;
+}

@@ -14,7 +14,6 @@ const CarCard = ({car}: CarCardProps) => {
     const {city_mpg, year, make, model, transmission, drive} = car;
 
     const handleModalOpen = (value: boolean) => {
-        console.log(value);
         setIsOpen(value);
     }
 

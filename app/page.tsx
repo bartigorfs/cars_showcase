@@ -1,8 +1,9 @@
 import React from "react";
 import Hero from '../components/Hero';
-import {CarCard, CustomFilter, SearchBar} from "@/components";
+import {CarCard, CustomFilter, SearchBar, ShowMore} from "@/components";
 import {fetchCars} from "@/utils";
 import {HomeProps} from "@/types";
+import {fuels, yearsOfProduction} from "@/constants/constants";
 
 export default async function Home({ searchParams }: HomeProps) {
 
@@ -11,7 +12,7 @@ export default async function Home({ searchParams }: HomeProps) {
         year: searchParams.year || 2022,
         fuel: searchParams.fuel || '',
         limit: searchParams.limit || 10,
-        model: searchParams.model || 'M5'
+        model: searchParams.model || '5'
     });
 
     const isDataEmpty = !Array.isArray(allCars) || allCars.length < 1 || !allCars;
@@ -30,8 +31,8 @@ export default async function Home({ searchParams }: HomeProps) {
                     <SearchBar/>
 
                     <div className="home__filter-container">
-                        <CustomFilter title="fuel"/>
-                        <CustomFilter title="year"/>
+                        <CustomFilter title="fuel" options={fuels}/>
+                        <CustomFilter title="year" options={yearsOfProduction}/>
                     </div>
                 </div>
 
@@ -42,6 +43,9 @@ export default async function Home({ searchParams }: HomeProps) {
                                     <CarCard key={car?.id} car={car} />
                                 ))}
                             </div>
+
+                            <ShowMore pageNumber={(searchParams.limit || 10)/10}
+                            isNext={(searchParams.limit || 10) > allCars.length}/>
                         </section>
                     ) : (
                         <div className="home__error-container">
