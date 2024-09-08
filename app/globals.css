@@ -55,7 +55,11 @@
 }
 
 .hero__image {
-  @apply relative xl:w-full w-[90%] xl:h-full h-[590px] z-0;
+  @apply relative xl:w-full w-[90%] xl:h-full h-[590px] z-0 select-none;
+}
+
+.hero__image img {
+  -webkit-user-drag: none;
 }
 
 .hero__image-overlay {

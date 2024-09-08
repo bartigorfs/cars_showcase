@@ -9,6 +9,7 @@ export interface BaseButtonProps{
     title: string;
     containerStyles?: string;
     textStyles?: string;
+    scrollId?: string;
     handleClick?: MouseEventHandler<HTMLButtonElement>;
     btnType?: "button" | "submit";
     rightIcon?: string;

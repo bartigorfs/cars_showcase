@@ -22,6 +22,7 @@ const Hero = () => {
 
                 <BaseButton
                     title="Explore Cars"
+                    scrollId="discover"
                     containerStyles="bg-primary-blue text-white rounded-full mt-10"
                     handleClick={handleScroll}
                 />

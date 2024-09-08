@@ -5,8 +5,19 @@ import {Dialog, Transition} from "@headlessui/react";
 import React, {Fragment} from "react";
 import Image from "next/image";
 import {generateCarImageUrl} from "@/utils";
+import Carousel from "./Carousel";
 
 const CarDetails = ({isOpen, closeModal, car}: CarDetailsProps) => {
+
+    const SLIDES = [
+        <Image src={generateCarImageUrl(car, "29")} alt={'CarModel'} fill priority
+        className="object-contain"/>,
+        <Image src={generateCarImageUrl(car, '33')} alt={'CarModel'} fill priority
+        className="object-contain"/>,
+        <Image src={generateCarImageUrl(car, '13')} alt={'CarModel'} fill priority
+        className="object-contain"/>
+    ]
+
     return (
         <>
             <Transition appear
@@ -35,7 +46,7 @@ const CarDetails = ({isOpen, closeModal, car}: CarDetailsProps) => {
                                               leaveTo="opacity-0 scale-95"
                             >
                                 <Dialog.Panel
-                                    className="relative w-full max-w-lg max-h-[90vh] overflow-y-visible transform rounded-2xl bg-white p-6 text-left shadow-xl transition-all flex flex-col gap-5">
+                                    className="relative w-full max-w-lg overflow-y-visible transform rounded-2xl bg-white p-6 text-left shadow-xl transition-all flex flex-col gap-5">
                                     <button type="button"
                                             className="absolute top-2 right-2 z-10 w-fit p-2 bg-primary-blue-100 rounded-full"
                                             onClick={closeModal}>
@@ -48,19 +59,8 @@ const CarDetails = ({isOpen, closeModal, car}: CarDetailsProps) => {
                                             <Image src={generateCarImageUrl(car)} alt={'CarModel'} fill priority
                                                    className="object-contain"/>
                                         </div>
-                                        <div className="flex gap-3">
-                                            <div className="flex-1 relative w-full h-24 bg-primary-blue-100 rounded-lg">
-                                                <Image src={generateCarImageUrl(car, "29")} alt={'CarModel'} fill priority
-                                                       className="object-contain"/>
-                                            </div>
-                                            <div className="flex-1 relative w-full h-24 bg-primary-blue-100 rounded-lg">
-                                                <Image src={generateCarImageUrl(car, '33')} alt={'CarModel'} fill priority
-                                                       className="object-contain"/>
-                                            </div>
-                                            <div className="flex-1 relative w-full h-24 bg-primary-blue-100 rounded-lg">
-                                                <Image src={generateCarImageUrl(car, '13')} alt={'CarModel'} fill priority
-                                                       className="object-contain"/>
-                                            </div>
+                                        <div className="gap-3">
+                                            <Carousel slides={SLIDES} />
                                         </div>
                                     </div>
 
