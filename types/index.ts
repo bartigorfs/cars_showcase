@@ -1,65 +1,65 @@
-import {EventHandler, MouseEventHandler} from "react";
+import { EventHandler, MouseEventHandler } from 'react';
 
 export interface HomeProps {
-    searchParams: FilterProps;
+  searchParams: FilterProps;
 }
 
-export interface BaseButtonProps{
-    isDisabled?: boolean
-    title: string;
-    containerStyles?: string;
-    textStyles?: string;
-    scrollId?: string;
-    handleClick?: MouseEventHandler<HTMLButtonElement>;
-    btnType?: "button" | "submit";
-    rightIcon?: string;
+export interface BaseButtonProps {
+  isDisabled?: boolean;
+  title: string;
+  containerStyles?: string;
+  textStyles?: string;
+  scrollId?: string;
+  handleClick?: MouseEventHandler<HTMLButtonElement>;
+  btnType?: 'button' | 'submit';
+  rightIcon?: string;
 }
 
-export interface SearchManufacturerProps{
-    manufacturer: string,
-    setManufacturer: (manufacturer: string) => void;
+export interface SearchManufacturerProps {
+  manufacturer: string;
+  setManufacturer: (manufacturer: string) => void;
 }
 
-export interface CarProps{
-    city_mpg: number,
-    class: string,
-    combination_mpg: number,
-    cylinders: number,
-    displacement: number,
-    drive: string,
-    fuel_type: string,
-    highway_mpg: number,
-    make: string,
-    model: string,
-    transmission: string,
-    year: number,
+export interface CarProps {
+  city_mpg: number;
+  class: string;
+  combination_mpg: number;
+  cylinders: number;
+  displacement: number;
+  drive: string;
+  fuel_type: string;
+  highway_mpg: number;
+  make: string;
+  model: string;
+  transmission: string;
+  year: number;
 }
 
-export interface CarDetailsProps{
-    isOpen: boolean,
-    closeModal: () => void,
-    car: CarProps,
+export interface CarDetailsProps {
+  isOpen: boolean;
+  closeModal: () => void;
+  car: CarProps;
 }
 
-export interface FilterProps{
-    manufacturer: string,
-    year: number,
-    fuel: string,
-    limit: number,
-    model: string,
+export interface FilterProps {
+  manufacturer: string;
+  year: number;
+  fuel: string;
+  limit: number;
+  model: string;
 }
 
-export interface CustomFilterProps{
-    title: string,
-    options: OptionProp[],
+export interface CustomFilterProps {
+  title: string;
+  options: OptionProp[];
 }
 
-export interface OptionProp{
-    title: string,
-    value: string
+export interface OptionProp {
+  title: string;
+  value: string;
 }
 
 export interface ShowMoreProps {
-    pageNumber: number;
-    isNext: boolean;
+  pageNumber: number;
+  isNext: boolean;
 }

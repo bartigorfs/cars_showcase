@@ -4,8 +4,8 @@ const nextConfig = {
     appDir: true,
   },
   images: {
-    domains: ['cdn.imagin.studio']
-  }
-}
+    domains: ['cdn.imagin.studio'],
+  },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
