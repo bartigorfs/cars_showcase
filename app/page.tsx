@@ -10,7 +10,7 @@ export default async function Home({ searchParams }: HomeProps) {
     manufacturer: searchParams.manufacturer || 'BMW',
     year: searchParams.year || 2022,
     fuel: searchParams.fuel || '',
-    limit: searchParams.limit || 10,
+    limit: searchParams.limit || 7,
     model: searchParams.model || '5',
   });
 
@@ -47,8 +47,8 @@ export default async function Home({ searchParams }: HomeProps) {
             </div>
 
             <ShowMore
-              pageNumber={(searchParams.limit || 10) / 10}
-              isNext={(searchParams.limit || 10) > allCars.length}
+              pageNumber={(searchParams.limit || 7) / 7}
+              isNext={(searchParams.limit || 7) > allCars.length}
             />
           </section>
         ) : (

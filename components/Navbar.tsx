@@ -20,7 +20,7 @@ const Navbar = () => {
           <BaseButton
             title='Sign up'
             btnType='button'
-            containerStyles='text-primary-blue border rounded-full bg-white min-w-[130px]'
+            containerStyles='text-white border rounded-full bg-[#4b74ff] min-w-[130px]'
           />
           <BaseButton
             title='Sign in'
