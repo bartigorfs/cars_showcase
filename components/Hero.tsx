@@ -17,7 +17,6 @@ const Hero = () => {
           Streamline your car rental experience with our effortless booking
           process.
         </p>
-
         <BaseButton
           title='Explore Cars'
           scrollId='discover'
